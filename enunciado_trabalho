@@ -1,0 +1,62 @@
+======== POWERPOINT ========
+A partir do banco de dados criado na aula
+passada:
+ Estados: Cod_Estado, NomeEst
+ Cidades: Cod_Cidade, NomeCid, Estado
+ Cursos: Cod_Curso, NomeCur, Data_Abertura
+ Alunos: N_Matricula, Nome, Endereco, Cidade, Curso.
+
+Implementar as pesquisas:
+◦ mostrar os dados de cidades, a partir de parte do
+nome da cidade que é informada;
+◦ mostrar nome e endereço de alunos que residem em
+uma cidade escolhida de uma listagem;
+◦ mostrar os dados dos alunos que fazem um curso
+escolhido de uma listagem.
+◦ mostrar o nome de estados, a partir de parte do nome
+do estado que é informada.
+
+
+
+======== Anotações Aline ========
+criar base de dados escola
+criar as tabelas
+estados: cod... (tem no slide aula 15 php) -> em italico sao as chaves estrangeiras
+cidades
+cursos
+alunos
+
+
+(o tipo da chave estrangeira tem q ser do mesmo tipo da chave primaria)
+
+na camada de aplicacao:
+layout livre
+listagem de alunos e listagem de cursos tem q aparecer
+as outras tabelas nao tem q mostrar, inserir, atualizar... 
+
+
+funcionalidade pra aluno: mostrar, inserir, deletar, alterar
+a tabela de alunos tem duas chaves estrangeiras, apresentar o nome correspondente
+ao codigo da chave estrangeira
+
+opcao mostrar cursos, na tabela de cursos apena a funcionalidade mostrar e deletar
+se ele estiver relacionado a algum aluno, nao pode excluir
+
+mostrar dados das pesquisar:
+mostrar dados das cidades a partir de parte do nome da cidade que é informado
+
+mostrar nome e endereço dos alunos q residem em uma cidade escolhida em uma listagem
+ex: escolho porto alegre, mostra o nome e endereço dos alunos de porto alegre
+
+mostrar os dados de tds os alunos que fazem o curso escolhido na lista ( tipo a funcionalidade de cima)
+
+mostrar o nome dos estados a partir de parte do nome que é informada, por ex, numa caixa de texto
+
+pelo menos cinco dados cadastrados
+
+entrega 01 de julho
+
+
+Realizar o desenvolvimento do sistema escola (exercício no material da aula 15), implementando banco de dados (phpmyadmin) e aplicação (php) com funcionalidades para alunos [mostrar, inserir, deletar e atualizar] e para cursos [mostrar e deletar], bem como para pesquisar (conforme proposto no material). Os dados dos estados e das cidades são inseridos diretamente no banco de dados (não precisa de página de internet para 'manipular' essas tabelas). Inserir no mínimo, cinco registros em cada tabela.
+
+Pode ser realizado em grupo, onde um dos integrantes faz a postagem do arquivo compactado (.zip), com os arquivos html, css, php, inc, sql [colocar o nome dos integrantes no comentário]. Postagem até o dia 01/07.
