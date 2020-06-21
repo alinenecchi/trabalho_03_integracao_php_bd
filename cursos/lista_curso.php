@@ -26,8 +26,7 @@
     print("<td>$nome_curso</td>");
     print("<td>$cod_curso</td>");
     print("<td>$data_abertura</td>");
-    print("<td><a href='deletarf.php?cod=$cod_curso'>Deletar</a></td>");
-    print("<td><a href='alterarf.php?cod=$cod_curso'>Alterar</a></td></tr>");  }
+    print("<td><a href='deletar_curso.php?cod=$cod_curso'>Deletar</a></td>"); }
     print("</table></center>");
   ?> 
   </body>

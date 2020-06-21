@@ -1,8 +1,8 @@
 <?php
-	$Matricula=$_GET['cod_aluno'];
+	$Matricula=$_GET['cod'];
 	require("conecta.inc.php");
 	$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-	$resultado1=mysqli_query($ok, "Select * from alunos, cidades, cursos where cidades.cod_cidade=aluno.cidade, cursos.cod_curso = aluno.curso and cod_cidade = '$cod_cidade', cod_curso = '$cod_curso'") or die ("Não é possível retornar dados do Aluno!");
+	$resultado1=mysqli_query($ok, "Select * from alunos, cidades, cursos where aluno.matricula=$Matricula") or die ("Não é possível retornar dados do Aluno!");
 	$linha=mysqli_fetch_array($resultado1);
 	$Matricula=$linha["cod_aluno"];
 	$Nome=$linha["nomea"];
@@ -13,10 +13,10 @@
   $Cod_estado=$linha["cod_estado"];
   $Curso=$linha["nome_cur"];
 	$Cod_curso=$linha["cod_curso"];
-	print("<h3>Alterando os dados do aluno:</h3><p>");
+	print("<h3>Alterando os dados do aluno: $Nome</h3><p>");
 ?>
 <form action="confirma_alteracao_aluno.php" method="get">
-Matrícula: <?php print($Matricula)?>
+
 <input type="hidden" name="cod_alter" value="<?php print($Matricula)?>">
 <br>Nome: <input type="text" name="nome_alter" value="<?php print($Nome)?>">
 <br>Endereco: <input type="text" name="endereco_alter" value="<?php print($Endereco)?>">

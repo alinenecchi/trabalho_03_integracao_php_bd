@@ -15,7 +15,19 @@
           <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
         </div>
 
-        <div id="backButton"><a href="../index.php">Voltar para home</a></div>
+        <section id="backNav">
+          <a href="../index.php">
+            <div id="backButton">
+              <img src="../images/back.png" id="backIcon">
+            </div>
+
+            <div id="backText">
+              Voltar para home
+            </div>
+          </a>
+        </section>
+
+        
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET" id="form">
             <label for="nome">Nome:</label>

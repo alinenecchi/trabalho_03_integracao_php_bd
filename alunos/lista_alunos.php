@@ -5,6 +5,7 @@
 
     <style type="text/css">
       @import "../css/stylesheet.css";
+      @import "../css/alunos.css";
     </style>
   </head>
 
@@ -15,9 +16,18 @@
       <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
     </div>
 
-    <div id="backButton"><a href="../index.php">Voltar para home</a></div>
+    <section id="backNav">
+      <a href="../index.php">
+        <div id="backButton">
+          <img src="../images/back.png" id="backIcon">
+        </div>
 
-  <body>
+        <div id="backText">
+          Voltar para home
+        </div>
+      </a>
+    </section>
+
   <?php
     require("../conecta.inc.php");
     $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
