@@ -1,12 +1,23 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Alunos</title>
+        <title>Inserir Alunos</title>
+
+      <style type="text/css">
+        @import "../css/stylesheet.css";
+        @import "../css/alunos.css";
+      </style>
     </head>
 
     <body>
-        <h2>Inserir Aluno</h2>
-        <form action="" method="GET">
+        <div id="header">
+          <h1>Inserir Alunos</h1>
+          <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
+        </div>
+
+        <div id="backButton"><a href="../index.php">Voltar para home</a></div>
+
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET" id="form">
             <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" required><br><br>
             <label for="endereco">Endereço:</label>
@@ -14,7 +25,7 @@
             <label for="cidade">Cidade:</label>
                 <select name="cidade" id="cidade" required>
                 <?php
-                include("./conecta.inc.php");
+                include("conecta.inc.php");
                 $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
                 $resultado=mysqli_query($ok, "Select * from cidades order by nome_cid") or die ("Não é possível consultar departamentos.");
                 while ($linha=mysqli_fetch_array($resultado))
@@ -38,6 +49,7 @@
             <input name ="submit" type="submit" value="Salvar"/>
             <input type="reset" value="Limpar"/>
         </form>
+
         <?php
             $visibilidade = isset($_GET['submit']) ? "" : "display='none'";
             echo "<div $visibilidade>";            
@@ -51,10 +63,10 @@
                 $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.>");
                 mysqli_query($ok, "insert into alunos (nome_aluno, endereco, curso) values ('$nome', '$endereco', '$cidade', '$curso')")
                 or die ("Não é possível inserir aluno!");
-                print("$nome inserida(o) com sucesso!");
+                echo "<script>alert('$nome inserida(o) com sucesso!')</script>";
             }
-            echo "<br><a href='index.php'>Voltar</a>";
             echo "</div>";
         ?> 
     </body>
 </html>
+ 

@@ -13,32 +13,54 @@
       <h2>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h2>
     </div>
 
-    <a href="/alunos/lista_alunos.php">
-      <div class="cards">
-        <p>Pesquisar Alunos<p/>
-        <img src="images/icon01.png" class="images">
-      </div>
-    </a>
+    <div id="container">
+        <a href="/alunos/lista_alunos.php">
+            <section class="cards">
+                <div class="text">
+                    <p>Pesquisar Alunos</p>
+                </div>
 
-    <a href="/alunos/inserir_alunos.php">
-      <div class="cards">
-        <p>Inserir Alunos</p>
-        <img src="images/icon01.png" class="images">
-      </div>
-    </a>
+                <div class="images">
+                    <img src="images/icon03.png" class="icon">
+                </div>
+            </section>
+        </a>
 
-    <a href="/cursos/lista_curso.php">
-      <div class="cards">
-        <p>Pesquisar Curso</p>
-        <img src="images/icon01.png" class="images">
-      </div>
-    </a>
+        <a href="/alunos/inserir_alunos.php">
+            <section class="cards">
+                <div class="text">
+                    <p>Inserir Alunos</p>
+                </div>
 
-    <a href="/cursos/inserir_curso.php">
-      <div class="cards">
-        <p>Inserir Curso</p>
-        <img src="images/icon01.png" class="images">
-      </div>
-    </a>
+                <div class="images">
+                    <img src="images/icon02.png" class="icon">
+                </div>
+            </section>
+        </a>
+
+        <a href="/cursos/lista_curso.php">
+            <section class="cards">
+                <div class="text">
+                    <p>Pesquisar Curso</p>
+                </div>
+
+                <div class="images">
+                    <img src="images/icon01.png" class="icon">
+                </div>
+            </section>
+        </a>
+
+        <a href="/cursos/inserir_curso.php">
+            <section class="cards">
+                <div class="text">
+                    <p>Inserir Curso</p>
+                </div>
+
+                <div class="images">
+                    <img src="images/icon04.png" class="icon">
+                </div>
+            </section>
+        </a>
+    </div>
   </body>
 </html>

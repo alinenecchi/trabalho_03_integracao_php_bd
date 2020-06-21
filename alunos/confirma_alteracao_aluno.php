@@ -2,9 +2,19 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Lista de Alunos</title>
+
+    <style type="text/css">
+      @import "../css/stylesheet.css";
+    </style>
   </head>
 
   <body>
+
+    <div id="header">
+      <h1>Confirmar - Alterar Alunos</h1>
+      <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
+    </div>
+
 <?php
 	$Matricula=$_GET['cod_alter'];
 	$nome_alter=$_GET['nome_alter'];
