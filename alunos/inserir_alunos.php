@@ -27,8 +27,6 @@
           </a>
         </section>
 
-        
-
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET" id="form">
             <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" required><br><br>
@@ -61,7 +59,7 @@
             <input name ="submit" type="submit" value="Salvar"/>
             <input type="reset" value="Limpar"/>
         </form>
-
+    
         <?php
             $visibilidade = isset($_GET['submit']) ? "" : "display='none'";
             echo "<div $visibilidade>";            

@@ -4,12 +4,18 @@
     <title>Deletar Curso</title>
 
     <style type="text/css">
-    @import "../css/stylesheet.css";
-    @import "../css/alunos.css";
+      @import "../css/stylesheet.css";
+      @import "../css/cursos.css";
     </style>
 </head>
 
 <body>
+
+  <div id="header">
+    <h1>Deletar Curso</h1>
+    <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
+  </div>
+
 <?php
     $codigo = $_GET['codigo'];
     require("../conecta.inc.php");

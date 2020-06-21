@@ -1,11 +1,12 @@
 #header {
   width: 100%;
   height: 10%;
-  background-color: rgb(156, 149, 149);
+  background-color: rgb(90, 24, 70);
   /*background-color: rgba(255, 255, 255);*/
 }
 
 h1 {
+  color: white;
   float: left;
   padding-left: 15px;
   position: fixed;
@@ -13,15 +14,45 @@ h1 {
 }
 
 h2 {
+  color: white;
   float: right;
   padding-right: 15px;
   margin-top: 18px;
 }
 
 h3 {
+  color: white;
   float: right;
   padding-right: 15px;
   margin-top: 24px;
+}
+
+#backNav {
+  /*background-color: blue;*/
+  width: 100%;
+  height: 50px;
+  padding: 8px 0px 0px 10px;
+  margin-top: 10px;
+  font-size: 18px;
+  position: fixed;
+}
+
+#backButton {
+  float: left;
+  width: 50px;
+  height: 40px;
+}
+
+#backIcon {
+  width: 30px;
+  margin-left: 10px;
+  margin-top: 4px;
+}
+
+#backText {
+  float: left;
+  margin-left: 4px;
+  margin-top: 10px;
 }
 
 #container {
@@ -34,7 +65,7 @@ h3 {
 
 .cards {
   float: left;
-  background-color: rgb(168, 255, 160, 0.9);
+  background-color: rgb(145, 13, 63, 0.5);
   width: 80%;
   height: 80px;
   margin-left: 10%;
