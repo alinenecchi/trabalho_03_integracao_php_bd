@@ -43,18 +43,18 @@
 
   while ($linha=mysqli_fetch_array($resultado1))  
   {
-    $Matricula=$linha["matricula"];
-    $NomeA=$linha["nome_aluno"];
-    $Endereco=$linha["endereco"];
-    $Cidade=$linha["nome_cid"];
-    $Curso=$linha["nome_curso"];
+    $Matricula  =$linha["matricula"];
+    $NomeA      =$linha["nome_aluno"];
+    $Endereco   =$linha["endereco"];
+    $Cidade     =$linha["nome_cid"];
+    $Curso      =$linha["nome_curso"];
     print("<tr><td align='center'>$Matricula</td>");
     print("<td>$NomeA</td>");
     print("<td>$Endereco</td>");
     print("<td>$Cidade</td>");
     print("<td>$Curso</td>");
-    print("<td><a href='confirma_deletar.php?cod=$Matricula'>Deletar</a></td>");
-    print("<td><a href='altera_alunos.php?cod=$Matricula'>Alterar</a></td></tr>");  }
+    echo("<td><a href='confirma_deletar.php?cod=$Matricula'>Deletar</a></td>");
+    echo("<td><a href='altera_alunos.php?cod=$Matricula'>Alterar</a></td></tr>");  }
     print("</table></center>");
   ?> 
   </body>
