@@ -31,7 +31,7 @@
   <?php
     require("../conecta.inc.php");
     $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-    $resultado1=mysqli_query($ok, "Select * from alunos,cursos,cidades where cidades.cod_cidade=alunos.cod_cidade and cursos.codigo_curso=alunos.cod_curso") or die ("Não é possível consultar a lista de alunos"); 
+    $resultado1=mysqli_query($ok, "Select * from alunos,cursos,cidades where cidades.cod_cidade=alunos.cidade and cursos.codigo=alunos.curso") or die ("Não é possível consultar a lista de alunos"); 
   print("<center><h2>LISTA DE ALUNOS</h2>");
   print("<table border='1' bordercolor='black'>");
   print("<tr><td><b>MATRÍCULA</td>");
@@ -43,11 +43,11 @@
 
   while ($linha=mysqli_fetch_array($resultado1))  
   {
-    $Matricula=$linha["cod_aluno"];
-    $NomeA=$linha["nomea"];
+    $Matricula=$linha["matricula"];
+    $NomeA=$linha["nome_aluno"];
     $Endereco=$linha["endereco"];
     $Cidade=$linha["nome_cid"];
-    $Curso=$linha["nome_cur"];
+    $Curso=$linha["nome_curso"];
     print("<tr><td align='center'>$Matricula</td>");
     print("<td>$NomeA</td>");
     print("<td>$Endereco</td>");
