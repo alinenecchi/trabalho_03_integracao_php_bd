@@ -44,12 +44,12 @@
   while ($linha=mysqli_fetch_array($resultado1))  
   {
     $Matricula  =$linha["matricula"];
-    $NomeA      =$linha["nome_aluno"];
+    $Nome_aluno =$linha["nome_aluno"];
     $Endereco   =$linha["endereco"];
     $Cidade     =$linha["nome_cid"];
     $Curso      =$linha["nome_curso"];
     print("<tr><td align='center'>$Matricula</td>");
-    print("<td>$NomeA</td>");
+    print("<td>$Nome_aluno</td>");
     print("<td>$Endereco</td>");
     print("<td>$Cidade</td>");
     print("<td>$Curso</td>");
