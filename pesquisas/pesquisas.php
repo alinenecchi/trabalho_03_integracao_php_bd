@@ -1,14 +1,35 @@
+
+<form action="resultados.php" method="get">
+Cidade: <input type="text" name="nome">
+<input type="hidden" name="id" value="1">
+&nbsp;&nbsp;<input type="submit" value="Pesquisar Cidade">
+</form>
+
+<form action="resultados.php" method="get">
+Estado: <input type="text" name="fone">
+<input type="hidden" name="id" value="2">
+&nbsp;&nbsp;<input type="submit" value="Pesquisar Estado">
+</form>
+
+<form action="resultados.php" method="get">
+Cidades: <select name="cidades">
+<option value="Escolha" selected></option>
 <?php
-//=>mostrar dados das cidades a partir de parte do nome da cidade que é informado
-	SELECT * FROM cidades where nome_cid LIKE '%busca%'
-
-//=>mostrar nome e endereço dos alunos q residem em uma cidade escolhida em uma listagem
-	SELECT nome_aluno, endereco FROM alunos, cidades WHERE alunos.cidade=cidades.cod_cidade and cidades.cod_cidade=$busca_cidade
-
-//=>mostrar os dados de tds os alunos que fazem o curso escolhido na lista ( tipo a funcionalidade de cima)
-	SELECT nome_aluno, endereco, cidade, curso FROM alunos, cursos WHERE alunos.curso=cursos.codigo and cursos.codigo=%busca_codigo
-
-//=>mostrar o nome dos estados a partir de parte do nome que é informada, por ex, numa caixa de texto
-    SELECT nome_est FROM estados where nome_est = '%busca_estado%'
-    
+require("conecta.inc.php");
+$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+$resultado=mysqli_query($ok, "Select * from cidades") or die ("Não é possível consultar as cidades.");
+while ($linha=mysqli_fetch_array($resultado))
+{
+    $Cod_cidade     =$linha["cod_cidade"];
+    $Nome_cidade    =$linha["nome_cid"];
+    print("<option value='$Cod_cidade'>$Nome_cidade</option>");
+}
 ?>
+</select>
+<input type="hidden" name="id" value="3">
+&nbsp;&nbsp;<input type="submit" value="Pesquisar Alunos">
+</form>
+<hr>
+<p><a href="../index.php">Página inicial</a>
+<?php
+
