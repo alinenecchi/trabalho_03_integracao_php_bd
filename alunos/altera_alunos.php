@@ -11,7 +11,7 @@
 	$Cod_cidade =$linha["cod_cidade"];
 	$Curso      =$linha["nome_curso"];
 	$Cod_curso  =$linha["codigo"];
-	print("<h1>Alterando os dados do aluno: $Nome</h1><p>");
+	print("<h1>Alterando os dados de: $Nome</h1><p>");
 ?>
 <form action="./confirma_alteracao_aluno.php" method="get">
 <br>Matrícula: <?php print($Matricula)?><input type="hidden" name="cod_alter" value="<?php print($Matricula)?>">

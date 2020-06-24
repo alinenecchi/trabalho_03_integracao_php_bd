@@ -22,16 +22,16 @@
 	$cidade_alter=$_GET['cidade_alter'];
 	$curso_alter=$_GET['curso_alter'];
 	//falta verificar se campos estão preenchidos
-	require("../conecta.inc.php");
+	require("../conecta.inc.php");	
 	$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-	mysqli_query($ok, "update alunos set nome_aluno='$nome_alter', endereco='$endereco_alter', cidade='$cidade_alter', curso ='$curso_alter' where matricula='$Matricula'") or die ("Não é possível deletar dados do Aluno!!");
+	mysqli_query($ok, "update alunos set nome_aluno='$nome_alter', endereco='$endereco_alter', cidade='$cidade_alter', curso ='$curso_alter' where matricula='$Matricula'") or die ("Não é possível alterar dados do Aluno!!");
 	print("<br>Alteração realizada:<p>");
-	print(	"<br>Matrícula: $Matricula 
+	print( "<br>Matrícula: $Matricula 
 			<br>Nome: <b>$nome_alter</b>
 			<br>Endereço:  $endereco_alter 
 			<br>Cidade: $cidade_alter 
 			<br>Curso: $curso_alter <p>");
-
+			
 	print("Dados alterados com sucesso!");
 ?>
 <p><a href="../index.php">Página Inicial</a>
