@@ -29,18 +29,18 @@
     </section>
 
 <?php
-$id=$_GET['id'];
+$id=$_GET["id"];
 require("../conecta.inc.php");
 $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
 $pesquisou=false;
 if ($id==1)
 {
-	$cidade=$_GET['cidade'];
+	$cidade=$_GET["cidade"];
 	if (empty($cidade))
 		print("Preencha com uma cidade.");
 	else
 	{
-		$resultado=mysqli_query($ok, "Select * from cidades where nome_cid LIKE '%$cidade%'") or die ("Não é possível pesquisar o nome da cidade.");
+		$resultado=mysqli_query($ok, "Select * from cidades where nome_cid = '%$cidade%'") or die ("Não é possível pesquisar o nome da cidade.");
 		$pesquisou=true;
 	}
 }
