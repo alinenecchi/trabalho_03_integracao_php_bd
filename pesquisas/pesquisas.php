@@ -1,20 +1,22 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Lista de Alunos</title>
+    <title>Pesquisar no site</title>
 
     <style type="text/css">
       @import "../css/stylesheet.css";
+      @import "../css/pesquisar.css";
     </style>
   </head>
 
   <body>
 
     <div id="header">
-      <h1>Confirmar - Alterar Alunos</h1>
+      <h1>Pesquisar no Site</h1>
       <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
     </div>
 
+<<<<<<< HEAD
 <form action="resultados.php" method="get">
 Cidade: <input type="text" name="cidade">
 <input type="hidden" name="id" value="1">
@@ -30,6 +32,36 @@ Estado: <input type="text" name="estado">
 <form action="resultados.php" method="get">
 Cidades: <select name="cidades">
 <option value="" selected></option>
+=======
+    <section id="backNav">
+      <a href="../index.php">
+        <div id="backButton">
+          <img src="../images/back.png" id="backIcon">
+        </div>
+
+        <div id="backText">
+          Voltar para home
+        </div>
+      </a>
+    </section>
+
+    <form action="resultados.php" method="get" class="form">
+      Cidade: <input type="text" name="cidade">
+      <input type="hidden" name="id" value="1">
+      &nbsp;&nbsp;<input type="submit" value="Pesquisar Cidade">
+    </form>
+
+    <form action="resultados.php" method="get" class="form">
+      Estado: <input type="text" name="fone">
+      <input type="hidden" name="id" value="2">
+      &nbsp;&nbsp;<input type="submit" value="Pesquisar Estado">
+    </form>
+
+    <form action="resultados.php" method="get" class="form">
+      Cidades: <select name="cidades">
+    <option value="Escolha" selected></option>
+
+>>>>>>> 825b0a585ea258bb114336e93a99f65aee44d174
 <?php
 require("conecta.inc.php");
 $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
@@ -41,6 +73,7 @@ while ($linha=mysqli_fetch_array($resultado))
     print("<option value='$Cod_cidade'>$Nome_cidade</option>");
 }
 ?>
+
 </select>
 <input type="hidden" name="id" value="3">
 &nbsp;&nbsp;<input type="submit" value="Pesquisar Alunos">
