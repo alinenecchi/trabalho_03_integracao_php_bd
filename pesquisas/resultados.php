@@ -1,16 +1,16 @@
 <?php
-$id=$_GET['id'];
-require("conecta.inc.php");
+$id=$_GET["id"];
+require("../conecta.inc.php");
 $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
 $pesquisou=false;
-if ($id==1)
+if ($id=="1")
 {
 	$cidade=$_GET['cidade'];
 	if (empty($cidade))
 		print("Preencha com uma cidade.");
 	else
 	{
-		$resultado=mysqli_query($ok, "select * from cidades where nome_cid LIKE '%$cidade%'") or die ("Não é possível pesquisar o nome da cidade.");
+		$resultado=mysqli_query($ok, "select * from cidades where nome_cid like '%$cidade%'") or die ("Não é possível pesquisar o nome da cidade.");
 		$pesquisou=true;
 	}
 }
@@ -47,25 +47,10 @@ elseif ($id==4)
 		$pesquisou=true;
 	}
 }
-else
-	print("Informe um crit�rio...");
-if($pesquisou)
-	if (mysqli_num_rows($resultado)=='')
-		print("Registro(s) n�o encontrados(s)...");
-	else
-		while ($linha=mysqli_fetch_array($resultado))
-		{
-			$CodigoF=$linha["codigof"];
-			$NomeF=$linha["nomef"];
-			$TelefoneF=$linha["telefone"];
-			$Nascimento=$linha["nascimento"];
-			$Nascimento = date("d-m-Y", strtotime($Nascimento));
-			$NomeD=$linha["nomed"];
-			print("$CodigoF - $NomeF - $TelefoneF - $Nascimento - $NomeD <br>");
-		}
+
 ?>
 <p>
-<a href="pesquisa.php">Voltar</a>
+<a href="pesquisas.php">Voltar</a>
 
 
 

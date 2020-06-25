@@ -15,21 +15,21 @@
       <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
     </div>
 
-    <form action="resultados.php" method="get">
+<form action="resultados.php" method="get">
 Cidade: <input type="text" name="cidade">
 <input type="hidden" name="id" value="1">
 &nbsp;&nbsp;<input type="submit" value="Pesquisar Cidade">
 </form>
 
-    <form action="resultados.php" method="get">
-    Estado: <input type="text" name="fone">
-    <input type="hidden" name="id" value="2">
-    &nbsp;&nbsp;<input type="submit" value="Pesquisar Estado">
-    </form>
+<form action="resultados.php" method="get">
+Estado: <input type="text" name="estado">
+<input type="hidden" name="id" value="2">
+&nbsp;&nbsp;<input type="submit" value="Pesquisar Estado">
+</form>
 
 <form action="resultados.php" method="get">
 Cidades: <select name="cidades">
-<option value="Escolha" selected></option>
+<option value="" selected></option>
 <?php
 require("conecta.inc.php");
 $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
@@ -47,7 +47,8 @@ while ($linha=mysqli_fetch_array($resultado))
 </form>
 <hr>
 <p><a href="../index.php">Página inicial</a>
-<?php
-?>
+
+    
+    
     </body>
 </html>
