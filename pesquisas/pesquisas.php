@@ -16,23 +16,6 @@
       <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
     </div>
 
-<<<<<<< HEAD
-<form action="resultados.php" method="get">
-Cidade: <input type="text" name="cidade">
-<input type="hidden" name="id" value="1">
-&nbsp;&nbsp;<input type="submit" value="Pesquisar Cidade">
-</form>
-
-<form action="resultados.php" method="get">
-Estado: <input type="text" name="estado">
-<input type="hidden" name="id" value="2">
-&nbsp;&nbsp;<input type="submit" value="Pesquisar Estado">
-</form>
-
-<form action="resultados.php" method="get">
-Cidades: <select name="cidades">
-<option value="" selected></option>
-=======
     <section id="backNav">
       <a href="../index.php">
         <div id="backButton">
@@ -61,7 +44,6 @@ Cidades: <select name="cidades">
       Cidades: <select name="cidades">
     <option value="Escolha" selected></option>
 
->>>>>>> 825b0a585ea258bb114336e93a99f65aee44d174
 <?php
 require("conecta.inc.php");
 $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
@@ -73,15 +55,13 @@ while ($linha=mysqli_fetch_array($resultado))
     print("<option value='$Cod_cidade'>$Nome_cidade</option>");
 }
 ?>
-
 </select>
+
 <input type="hidden" name="id" value="3">
 &nbsp;&nbsp;<input type="submit" value="Pesquisar Alunos">
 </form>
-<hr>
-<p><a href="../index.php">Página inicial</a>
 
-    
-    
+<?php
+?>
     </body>
 </html>
