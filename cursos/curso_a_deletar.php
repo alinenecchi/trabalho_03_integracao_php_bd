@@ -15,6 +15,17 @@
     <h1>Deletar Curso</h1>
     <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
   </div>
+  <section id="backNav">
+      <a href="../index.php">
+        <div id="backButton">
+          <img src="../images/back.png" id="backIcon">
+        </div>
+
+        <div id="backText">
+          Voltar para home
+        </div>
+      </a>
+    </section>
 
 <?php
     $codigo = $_GET['codigo'];
@@ -35,12 +46,12 @@
 ?>
   <div>
   
-    <form action="" method="POST">
+    <form action="./curso_deletado.php" method="POST">
       <input type="hidden" name="cod_del" value="<?php print($codigo)?>">
       <input type="hidden" name="nome" value="<?php print($nome_curso)?>">
-      <input name ="submit" type="submit" value="Confirma Deletar"/>
+      <input name ="submit" type="submit" value="Confirmar Deletar"/>
     </form>
-    <button><a href="lista_curso.php">Cancelar e voltar</a></button>
+    <button><a href="./lista_curso.php">Cancelar e voltar</a></button>
   </div>
 
   

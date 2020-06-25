@@ -48,7 +48,7 @@
         print("<td>$cod_curso</td>");
         print("<td>$nome_curso</td>");
         print("<td>$data_abertura</td>");
-        echo("<td><a href='to_delete.php?codigo=$cod_curso'>Deletar</a></td>");
+        echo("<td><a href='./curso_a_deletar.php?codigo=$cod_curso'>Deletar</a></td>");
         print("</tr>"); };
         print("</table></center>");
   ?> 

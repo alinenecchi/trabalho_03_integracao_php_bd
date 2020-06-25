@@ -16,9 +16,20 @@
     $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
     $result=mysqli_query($ok, "delete from cursos where cod_curso='$cod_del'") 
     or die ("Não é possível excluir este curso!");
-    echo "<div class='aviso'><h2>$nome deletado com sucesso!</h2></div>";
+    echo "<script>alert('$nome deletado com sucesso!')</script>";
+
   ?>
-  <button><a href="lista_curso.php">Voltar</a></button>
+    <section id="backNav">
+      <a href="../index.php">
+        <div id="backButton">
+          <img src="../images/back.png" id="backIcon">
+        </div>
+
+        <div id="backText">
+          Voltar para home
+        </div>
+      </a>
+    </section>
 </body>
 </html>
 
