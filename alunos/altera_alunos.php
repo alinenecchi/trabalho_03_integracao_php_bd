@@ -41,6 +41,6 @@ while ($linha=mysqli_fetch_array($resultado3))
 }
 ?>
 </select>
-<p><input type="submit" value="Alterar Dados"></p>
+<p><input name ="submit" type="submit" value="Confirmar alteração"/></p>
 </form>
 <br><a href="../index.php">Cancelar e voltar</a>
