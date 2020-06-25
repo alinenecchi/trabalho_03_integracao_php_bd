@@ -56,13 +56,12 @@ while ($linha=mysqli_fetch_array($resultado))
 }
 ?>
 </select>
+
 <input type="hidden" name="id" value="3">
 &nbsp;&nbsp;<input type="submit" value="Pesquisar Alunos">
 </form>
-<hr>
-<p><a href="../index.php">Página inicial</a>
 
-    
-    
+<?php
+?>
     </body>
 </html>
