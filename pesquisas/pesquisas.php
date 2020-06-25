@@ -1,9 +1,3 @@
-
-<form action="resultados.php" method="get">
-Cidade: <input type="text" name="nome">
-<input type="hidden" name="id" value="1">
-&nbsp;&nbsp;<input type="submit" value="Pesquisar Cidade">
-</form>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,6 +14,12 @@ Cidade: <input type="text" name="nome">
       <h1>Confirmar - Alterar Alunos</h1>
       <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
     </div>
+
+    <form action="resultados.php" method="get">
+Cidade: <input type="text" name="cidade">
+<input type="hidden" name="id" value="1">
+&nbsp;&nbsp;<input type="submit" value="Pesquisar Cidade">
+</form>
 
     <form action="resultados.php" method="get">
     Estado: <input type="text" name="fone">
