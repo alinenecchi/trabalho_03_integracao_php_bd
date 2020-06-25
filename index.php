@@ -14,10 +14,10 @@
     </div>
 
     <div id="container">
-        <a href="./alunos/lista_alunos.php">
+        <a href="/alunos/lista_alunos.php">
             <section class="cards">
                 <div class="text">
-                    <p>Pesquisar Alunos</p>
+                    <p>Alunos</p>
                 </div>
 
                 <div class="images">
@@ -26,7 +26,7 @@
             </section>
         </a>
 
-        <a href="./alunos/inserir_alunos.php">
+        <a href="/alunos/inserir_alunos.php">
             <section class="cards">
                 <div class="text">
                     <p>Inserir Alunos</p>
@@ -38,10 +38,10 @@
             </section>
         </a>
 
-        <a href="./cursos/lista_curso.php">
+        <a href="/cursos/lista_curso.php">
             <section class="cards">
                 <div class="text">
-                    <p>Pesquisar Curso</p>
+                    <p>Cursos</p>
                 </div>
 
                 <div class="images">
@@ -50,7 +50,7 @@
             </section>
         </a>
 
-        <a href="./cursos/inserir_curso.php">
+        <a href="/cursos/inserir_curso.php">
             <section class="cards">
                 <div class="text">
                     <p>Inserir Curso</p>
@@ -58,6 +58,18 @@
 
                 <div class="images">
                     <img src="images/icon04.png" class="icon">
+                </div>
+            </section>
+        </a>
+
+        <a href="/pesquisas/pesquisas.php">
+            <section class="cards">
+                <div class="text">
+                    <p>Pesquisar no Site</p>
+                </div>
+
+                <div class="images">
+                    <img src="images/icon05.png" class="icon">
                 </div>
             </section>
         </a>
