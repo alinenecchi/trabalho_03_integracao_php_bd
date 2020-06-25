@@ -30,7 +30,7 @@
 
 <?php
 $id=$_GET['id'];
-require("conecta.inc.php");
+require("../conecta.inc.php");
 $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
 $pesquisou=false;
 if ($id==1)
@@ -40,7 +40,7 @@ if ($id==1)
 		print("Preencha com uma cidade.");
 	else
 	{
-		$resultado=mysqli_query($ok, "select * from cidades where nome_cid LIKE '%$cidade%'") or die ("Não é possível pesquisar o nome da cidade.");
+		$resultado=mysqli_query($ok, "Select * from cidades where nome_cid LIKE '%$cidade%'") or die ("Não é possível pesquisar o nome da cidade.");
 		$pesquisou=true;
 	}
 }
@@ -79,20 +79,7 @@ elseif ($id==4)
 }
 else
 	print("Informe um critério...");
-if($pesquisou)
-	if (mysqli_num_rows($resultado)=='')
-		print("Registro(s) não encontrados(s)...");
-	else
-		while ($linha=mysqli_fetch_array($resultado))
-		{
-			$CodigoF=$linha["codigof"];
-			$NomeF=$linha["nomef"];
-			$TelefoneF=$linha["telefone"];
-			$Nascimento=$linha["nascimento"];
-			$Nascimento = date("d-m-Y", strtotime($Nascimento));
-			$NomeD=$linha["nomed"];
-			print("$CodigoF - $NomeF - $TelefoneF - $Nascimento - $NomeD <br>");
-		}
+
 ?>
     </body>
 </html>
