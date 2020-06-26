@@ -87,7 +87,7 @@ elseif ($id==3)
 			$Nome_aluno=$linha["nome_aluno"];
 			$Endereco=$linha["endereco"];
 			print("<br>Nome: $Nome_aluno
-			<br> Endereço: $Endereco ");
+			<br> Endereço: $Endereco <br>");
 		}
 	}
 }
@@ -98,7 +98,7 @@ elseif ($id==4)
 		print("Escolha um departamento.");
 	else
 	{
-		$resultado=mysqli_query($ok, "Select nome_aluno, endereco, cidade, curso from alunos, cursos where alunos.curso=cursos.codigo and cursos.codigo like '%cursos'") or die ("Não é possível pesquisar departamento do funcionário.");
+		$resultado=mysqli_query($ok, "Select matricula, nome_aluno, endereco, nome_cid, curso from alunos, cursos, cidades where alunos.curso=cursos.codigo and cidades.cod_cidade=alunos.cidade and cursos.codigo like '$cursos'") or die ("Não é possível pesquisar os alunos.");
 		if (mysqli_num_rows($resultado)=='')
 			print("Registro(s) não encontrados(s)...");
 		else
@@ -110,9 +110,10 @@ elseif ($id==4)
 			$Endereco=$linha["endereco"];
 			$Cidade=$linha["nome_cid"];
 			print("
-			<Matrícula: $Matricula
+			<br>Matrícula: $Matricula
 			<br>Nome: $Nome_aluno
-			<br> Endereço: $Endereco ");
+			<br> Endereço: $Endereco 
+			<br> Cidade: $Cidade<br>");
 		}
 	}
 }
