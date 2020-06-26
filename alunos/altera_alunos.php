@@ -29,6 +29,7 @@ while ($linha=mysqli_fetch_array($resultado2))
 };
 ?>
 </select>
+<input type="hidden" name="id" value="3">
 <br>Curso:     <select name="curso_alter">
 <option value="<?php print("$Cod_curso");?>" selected><?php print("$Curso");?></option>
 <?php
