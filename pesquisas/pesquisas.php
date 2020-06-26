@@ -45,7 +45,7 @@
 			<option value="" selected>escolha...</option>
 			<?php
 			require("../conecta.inc.php");
-			$ok = conecta_bd() or die ("N�o � poss�vel conectar-se ao servidor.");
+			$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
 			$resultado2=mysqli_query($ok, "Select * from cidades order by nome_cid") or die ("Não é possível consultar as cidades"); 
 			while ($linha=mysqli_fetch_array($resultado2))
 			{
@@ -63,7 +63,6 @@
 			Cursos: <select name="cursos" id="cursos">
 			<option value="" selected>escolha...</option>
 			<?php
-			require("conecta.inc.php");
 			$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
 			$resultado=mysqli_query($ok, "Select * from cursos") or die ("Não é possível consultar as cidades.");
 			while ($linha=mysqli_fetch_array($resultado))
