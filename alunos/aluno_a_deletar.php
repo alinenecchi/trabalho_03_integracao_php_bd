@@ -28,7 +28,7 @@
     </section>
 
 <?php
-    $codigo = $_GET['codigo'];
+    $codigo = $_GET['cod'];
     require("../conecta.inc.php");
     $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
     $resultado1=mysqli_query($ok, "Select * from alunos, cidades, cursos where cidades.cod_cidade=alunos.cidade and cursos.codigo=alunos.curso and matricula= '$codigo'")or die ("Não é possível retornar os dados");

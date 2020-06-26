@@ -53,7 +53,7 @@
     print("<td>$Endereco</td>");
     print("<td>$Cidade</td>");
     print("<td>$Curso</td>");
-    echo("<td><a href='alunos_a_deletar.php?cod=$Matricula'>Deletar</a></td>");
+    echo("<td><a href='aluno_a_deletar.php?cod=$Matricula'>Deletar</a></td>");
     echo("<td><a href='altera_alunos.php?cod=$Matricula'>Alterar</a></td></tr>");  }
     print("</table></center>");
   ?> 
