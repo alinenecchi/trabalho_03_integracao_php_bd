@@ -14,7 +14,7 @@
     $nome = $_POST['nome'];
     require("../conecta.inc.php");
     $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-    $result=mysqli_query($ok, "delete from cursos where cod_curso='$cod_del'") 
+    $result=mysqli_query($ok, "delete from cursos where codigo='$cod_del'") 
     or die ("Não é possível excluir este curso!");
     echo "<script>alert('$nome deletado com sucesso!')</script>";
 

@@ -31,10 +31,10 @@
     $codigo = $_GET['codigo'];
     require("../conecta.inc.php");
     $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-    $result=mysqli_query($ok, "select * from cursos where cod_curso='$codigo'") 
+    $result=mysqli_query($ok, "select * from cursos where codigo='$codigo'") 
     or die ("Não é possível retornar dados dos cursos!");
     $linha=mysqli_fetch_array($result);
-    $cod_curso = $linha["cod_curso"];
+    $cod_curso = $linha["codigo"];
     $nome_curso = $linha["nome_curso"];
     $data_abertura = $linha["data_abertura"];
 
@@ -45,7 +45,6 @@
 
 ?>
   <div>
-  
     <form action="./curso_deletado.php" method="POST">
       <input type="hidden" name="cod_del" value="<?php print($codigo)?>">
       <input type="hidden" name="nome" value="<?php print($nome_curso)?>">
@@ -53,8 +52,6 @@
     </form>
     <button><a href="./lista_curso.php">Cancelar e voltar</a></button>
   </div>
-
-  
 
 </body>
 </html>
