@@ -41,14 +41,14 @@
     print("</tr>");
   
     while ($linha=mysqli_fetch_array($resultado)){
+        $codigo        = $linha["codigo"];
         $nome_curso    = $linha["nome_curso"];
-        $cod_curso     = $linha["cod_curso"];
         $data_abertura = $linha["data_abertura"];
         print("<tr>");
-        print("<td>$cod_curso</td>");
+        print("<td>$codigo</td>");
         print("<td>$nome_curso</td>");
         print("<td>$data_abertura</td>");
-        echo("<td><a href='./curso_a_deletar.php?codigo=$cod_curso'>Deletar</a></td>");
+        echo("<td><a href='./curso_a_deletar.php?codigo=$codigo'>Deletar</a></td>");
         print("</tr>"); };
         print("</table></center>");
   ?> 
