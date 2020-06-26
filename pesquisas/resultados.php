@@ -81,7 +81,7 @@ elseif ($id==3)
 		if (mysqli_num_rows($resultado)=='')
 			print("Registro(s) não encontrados(s)...");
 		else
-		print("Alunos de $cidades:");
+		print("Alunos da cidade selecionada:");
 		while ($linha=mysqli_fetch_array($resultado))
 		{
 			$Nome_aluno=$linha["nome_aluno"];
@@ -102,7 +102,7 @@ elseif ($id==4)
 		if (mysqli_num_rows($resultado)=='')
 			print("Registro(s) não encontrados(s)...");
 		else
-		print("Alunos do curso de $cursos:");
+		print("Alunos do curso selecionado:");
 		while ($linha=mysqli_fetch_array($resultado))
 		{
 			$Matricula=$linha["matricula"];
