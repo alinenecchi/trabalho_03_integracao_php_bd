@@ -40,14 +40,14 @@
 			$Cod_cidade =$linha["cod_cidade"];
 			$Curso      =$linha["nome_curso"];
 			$Cod_curso  =$linha["codigo"];
-			print("<h4>Aluno(a): $Nome</h4><p>");
+			print("<h4>Aluno(a): $Nome</h4>");
 		?>
 		
 		<form action="./confirma_alteracao_aluno.php" method="get" id="alteraAluno">
 		<br>Matrícula: <?php print($Matricula)?><input type="hidden" name="cod_alter" value="<?php print($Matricula)?>">
-		<br>Nome:      <input type="text" name="nome_alter" value="<?php print($Nome)?>">
-		<br>Endereco:  <input type="text" name="endereco_alter" value="<?php print($Endereco)?>">
-		<br>Cidade:    <select name="cidade_alter">
+		<p>Nome:      <input type="text" name="nome_alter" id="nome" value="<?php print($Nome)?>"></p>
+		<p>Endereco:  <input type="text" name="endereco_alter" id="endereco" value="<?php print($Endereco)?>"></p>
+		<p>Cidade:    <select id="cidade" name="cidade_alter"></p>
 		<option value="<?php print("$Cod_cidade");?>" selected><?php print("$Cidade");?></option> 
 		<?php
 		$resultado2=mysqli_query($ok, "Select * from cidades where cod_cidade <> '$Cod_cidade' order by nome_cid") or die ("Não é possível consultar as cidades"); 
@@ -61,7 +61,7 @@
 		</select>
 
 		<input type="hidden" name="id" value="3">
-		<br>Curso:     <select name="curso_alter">
+		<p>Curso:     <select id="curso" name="curso_alter"></p>
 		<option value="<?php print("$Cod_curso");?>" selected><?php print("$Curso");?></option>
 		<?php
 		$resultado3=mysqli_query($ok, "Select * from cursos where codigo <> '$Cod_curso' ") or die ("Não é possível consultar os cursos"); 
@@ -73,18 +73,17 @@
 		}
 		?>
 		</select>
-		<p><input name ="submit" type="submit" value="Confirmar alteração"/></p>
+		<p><input id="confirmaAltera" name="submit" type="submit" value="Confirmar alteração"/></p>
 		</form>
 
-		<p><a href="../index.php">Cancelar e voltar</a></p>
-		<section id="cancelar";>
-			<a href="../index.php">
-				<div id="backButton">
-					<img src="../images/back.png" id="backIcon">
+		<section id="cancelarNav";>
+			<a href="lista_alunos.php">
+				<div id="CancelarButton">
+					<img src="../images/cancel.png" id="cancelarIcon">
 				</div>
 
-				<div id="backText">
-					Voltar para home
+				<div id="cancelarText">
+					Cancelar
 				</div>
 			</a>
 		</section>
