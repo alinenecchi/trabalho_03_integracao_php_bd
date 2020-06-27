@@ -78,3 +78,18 @@ h4 {
   margin-left: 4px;
   margin-top: 4px;
 }
+
+#infos {
+  padding: 0px 50px 0px 0px;
+  margin-left: 30px;
+  font-size: 18px;
+}
+
+#infos p {
+  font-size: 25px;
+}
+
+#confirmaDeletar {
+  padding: 1px 10px 1px 10px;
+  margin-top: 20px;
+}
