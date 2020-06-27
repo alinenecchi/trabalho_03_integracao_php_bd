@@ -42,7 +42,7 @@
 
 		<form action="resultados.php" method="get" class="form">
 			Cidades: <select name="cidades">
-			<option value="" selected>escolha...</option>
+			<option value="" disabled selected>escolha...</option>
 			<?php
 			require("../conecta.inc.php");
 			$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
