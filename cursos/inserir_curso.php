@@ -38,17 +38,25 @@
       </form>
 
         <?php
+            require("../conecta.inc.php");
+            $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+            
             $visibilidade = isset($_GET['submit']) ? "" : "display='none'";
             echo "<div $visibilidade>";            
+            
             if(isset($_GET['submit']))
             {
                 $nome_curso = mb_strtoupper($_GET['nome_curso']);
                 $data_abertura = $_GET['data_abertura'];
-                require("../conecta.inc.php");
-                $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.>");
+                $results= mysqli_query($ok,"select * from cursos where cursos.nome_curso = '$nome_curso'");
+                if(mysqli_num_rows($results) === 0){
                 mysqli_query($ok, "insert into cursos (nome_curso, data_abertura) values('$nome_curso', '$data_abertura')")
                 or die ("Não é possível inserir curso!");
                 echo "<script>alert('$nome_curso inserido com sucesso!')</script>";
+              }else{
+                echo "<script>alert('Este curso já existe')</script>";
+                exit;
+               }
             }
             echo "</div>";
         ?> 
