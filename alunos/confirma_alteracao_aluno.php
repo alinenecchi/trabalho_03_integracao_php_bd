@@ -13,7 +13,19 @@
     <div id="header">
       <h1>Confirmar - Alterar Alunos</h1>
       <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
-    </div>
+	</div>
+	
+	<section id="backNav">
+      <a href="../index.php">
+        <div id="backButton">
+          <img src="../images/back.png" id="backIcon">
+        </div>
+
+        <div id="backText">
+          Voltar para home
+        </div>
+      </a>
+    </section>
 
 <?php
 	$Matricula=$_GET['cod_alter'];
@@ -26,14 +38,22 @@
 	$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
 	mysqli_query($ok, "update alunos set nome_aluno='$nome_alter', endereco='$endereco_alter', cidade='$cidade_alter', curso ='$curso_alter' where matricula='$Matricula'") or die ("Não é possível alterar dados do Aluno!!");
 	print("<br>Alteração realizada:<p>");
-	print( "<br>Matrícula: $Matricula 
-			<br>Nome: <b>$nome_alter</b>
-			<br>Endereço:  $endereco_alter 
-			<br>Cidade: $cidade_alter 
-			<br>Curso: $curso_alter <p>");
+	$pesquisa = mysqli_query($ok, " select * from alunos, cidades, cursos where alunos.matricula = '$Matricula' and cidades.cod_cidade=alunos.cidade and cursos.codigo=alunos.curso") or die ("Não é possível acessar dados do Aluno");
+	
+	$linha=mysqli_fetch_array($pesquisa);
+	$cod_aluno  =$linha["matricula"];
+    $Nome_aluno =$linha["nome_aluno"];
+    $Endereco   =$linha["endereco"];
+    $Cidade     =$linha["nome_cid"];
+    $Curso      =$linha["nome_curso"];
+	print( "<br>Matrícula: $cod_aluno
+			<br>Nome: <b>$Nome_aluno</b>
+			<br>Endereço: $Endereco 
+			<br>Cidade: $Cidade 
+			<br>Curso: $Curso<p>");
 			
 	print("Dados alterados com sucesso!");
 ?>
-<p><a href="../index.php">Página Inicial</a>
+<p><a href="./lista_alunos.php">Voltar</a>
   </body>
 </html>
