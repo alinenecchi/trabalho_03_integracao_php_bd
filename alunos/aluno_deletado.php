@@ -9,6 +9,24 @@
 </head>
 
 <body>
+
+  <div id="header">
+    <h1>Confirmação exclusão de Aluno</h1>
+    <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
+  </div>
+
+  <section id="backNav">
+    <a href="../index.php">
+      <div id="backButton">
+        <img src="../images/back.png" id="backIcon">
+      </div>
+
+      <div id="backText">
+        Voltar para home
+      </div>
+    </a>
+  </section>
+
   <?php
     $cod_del = $_POST['cod_del'];
     $nome = $_POST['nome'];
@@ -19,17 +37,6 @@
     echo "<script>alert('$nome deletado(a) com sucesso!')</script>";
 
   ?>
-    <section id="backNav">
-      <a href="../index.php">
-        <div id="backButton">
-          <img src="../images/back.png" id="backIcon">
-        </div>
-
-        <div id="backText">
-          Voltar para home
-        </div>
-      </a>
-    </section>
 </body>
 </html>
 

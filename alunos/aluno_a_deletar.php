@@ -15,6 +15,7 @@
     <h1>Deletar Aluno</h1>
     <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
   </div>
+  
   <section id="backNav">
       <a href="../index.php">
         <div id="backButton">
