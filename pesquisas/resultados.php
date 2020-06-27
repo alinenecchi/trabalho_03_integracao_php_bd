@@ -77,11 +77,13 @@ elseif ($id==3)
 		print("Escolha uma cidade.");
 	else
 	{
-		$resultado=mysqli_query($ok, "Select nome_aluno, endereco from alunos, cidades where alunos.cidade=cidades.cod_cidade and cidades.cod_cidade like '$cidades'") or die ("Não é possível pesquisar as informações dos alunos.");
+		$resultado=mysqli_query($ok, "Select nome_aluno, endereco, nome_cid from alunos, cidades where alunos.cidade=cidades.cod_cidade and cidades.cod_cidade like '$cidades'") or die ("Não é possível pesquisar as informações dos alunos.");
 		if (mysqli_num_rows($resultado)=='')
 			print("Registro(s) não encontrados(s)...");
 		else
-		print("Alunos da cidade selecionada:");
+		$row = mysqli_fetch_array($resultado);
+		$nome_cid = $row["nome_cid"];
+		print("Alunos de $nome_cid:<br>");
 		while ($linha=mysqli_fetch_array($resultado))
 		{
 			$Nome_aluno=$linha["nome_aluno"];
@@ -98,11 +100,13 @@ elseif ($id==4)
 		print("Escolha um departamento.");
 	else
 	{
-		$resultado=mysqli_query($ok, "Select matricula, nome_aluno, endereco, nome_cid, curso from alunos, cursos, cidades where alunos.curso=cursos.codigo and cidades.cod_cidade=alunos.cidade and cursos.codigo like '$cursos'") or die ("Não é possível pesquisar os alunos.");
+		$resultado=mysqli_query($ok, "Select matricula, nome_aluno, endereco, nome_cid, nome_curso from alunos, cursos, cidades where alunos.curso=cursos.codigo and cidades.cod_cidade=alunos.cidade and cursos.codigo like '$cursos'") or die ("Não é possível pesquisar os alunos.");
 		if (mysqli_num_rows($resultado)=='')
 			print("Registro(s) não encontrados(s)...");
 		else
-		print("Alunos do curso selecionado:");
+		$row = mysqli_fetch_array($resultado);
+		$nome_curso = $row["nome_curso"];
+		print("Alunos de $nome_curso:<br>");
 		while ($linha=mysqli_fetch_array($resultado))
 		{
 			$Matricula=$linha["matricula"];
