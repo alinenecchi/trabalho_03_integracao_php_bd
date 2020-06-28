@@ -10,7 +10,6 @@
     </head>
 
     <body>
-
       <div id="header">
         <h1>Inserir Curso</h1>
         <h3>Alanda | Aline Cruz | Aline Dias | Bruna Rossoni</h3>
@@ -29,12 +28,13 @@
       </section>
         
       <form action="" method="GET" id="form">
-          <label for="nome_curso" id="nome_curso">Nome do Curso:</label>
-              <input type="text" name="nome_curso" id="nome_curso" required style="margin-left: 3px"><br><br>
-          <label for="data_abertura" id="data_abertura">Data de abertura:</label>
-              <input type="text" name="data_abertura" placeholder="aaaa-mm-dd">
-          <p><input name ="submit" type="submit" value="Salvar" id="salvar"/>
-          <input type="reset" value="Limpar" id="limpar"/></p>
+        <label for="nome_curso" id="nome_curso">Nome do Curso:</label>
+        <input type="text" name="nome_curso" id="nome_curso" required style="margin-left: 3px"><br><br>
+        <label for="data_abertura" id="data_abertura">Data de abertura:</label>
+        <input type="text" name="data_abertura" placeholder="aaaa-mm-dd">
+        
+        <p><input name ="submit" type="submit" value="Salvar" id="salvar"/>
+        <input type="reset" value="Limpar" id="limpar"/></p>
       </form>
 
         <?php

@@ -1,5 +1,4 @@
 #form {
-  /*background-color: yellow;*/
   width: 95%;
   height: 150px;
   padding: 30px 0px 0px 55px;
@@ -8,6 +7,15 @@
 
 label {
   padding: 0px 50px 0px 0px; 
+}
+
+#salvar {
+  margin-left: 370px;
+  padding: 1px 15px 1px 15px;
+}
+
+#limpar {
+  padding: 1px 15px 1px 15px;
 }
 
 #listagem {
@@ -21,13 +29,11 @@ table {
 }
 
 th {
-  /*border: 1px solid black;*/
   padding: 0px 5px 0px 2px;
   text-align: left;
 }
 
 td {
-   /*border: 1px solid black;*/
   padding: 4px 40px 4px 2px;
 }
 

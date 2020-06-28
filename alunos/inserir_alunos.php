@@ -60,8 +60,8 @@
                 };
                 ?>
                 </select><br><br>
-            <input name ="submit" type="submit" value="Salvar"/>
-            <input type="reset" value="Limpar"/>
+            <input name ="submit" type="submit" value="Salvar" id="salvar"/>
+            <input type="reset" value="Limpar" id="limpar"/>
         </form>
     
         <?php

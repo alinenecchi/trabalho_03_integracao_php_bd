@@ -1,7 +1,64 @@
-.form {
-  /*background-color: yellow;*/
+#form1 {
+  background-color: yellow;
   width: 95%;
   height: 30px;
   padding: 8px 0px 0px 55px;
-  margin-top: 8px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+#cidadeLabel {
+  padding: 0px 100px 0px 0px;
+}
+
+#cidadeInput {
+  padding: 0px 80px 0px 0px;
+}
+
+#form2 {
+  background-color: yellow;
+  width: 95%;
+  height: 30px;
+  padding: 8px 0px 0px 55px;
+  margin-bottom: 0px;
+}
+
+#estadoLabel {
+  padding: 0px 102px 0px 0px;
+}
+
+#estadoInput {
+  padding: 0px 80px 0px 0px;
+}
+
+#form3 {
+  background-color: yellow;
+  width: 95%;
+  height: 30px;
+  padding: 8px 0px 0px 55px;
+  margin-bottom: 0px;
+}
+
+#alunoCidadeLabel {
+  padding: 0px 18px 0px 0px;
+}
+
+#cidade {
+  padding: 0px 136px 0px 0px;
+}
+
+#form4 {
+  background-color: yellow;
+  width: 95%;
+  height: 30px;
+  padding: 8px 0px 0px 55px;
+  margin-bottom: 0px;
+}
+
+#alunoCursoLabel {
+  padding: 0px 26px 0px 0px;
+}
+
+#cursos {
+  padding: 0px 20px 0px 0px;
 }

@@ -27,30 +27,32 @@
         </div>
       </a>
     </section>
-  <?php
-    require("../conecta.inc.php");
-    $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-    $resultado=mysqli_query($ok, "Select * from cursos") or die ("Não é possível consultar a lista de cursos"); 
-    print("<center><h2>LISTA DE CURSOS</h2>");
-    print("<table border='1' bordercolor='black'>");
-    print("<tr>");
-    print("<td><b>Codigo do curso</td>");
-    print("<td><b>Nome do curso</td>");
-    print("<td><b>Data da abertura</td>");
-    print("<td><b>Deletar</td>");
-    print("</tr>");
-  
-    while ($linha=mysqli_fetch_array($resultado)){
-        $codigo        = $linha["codigo"];
-        $nome_curso    = $linha["nome_curso"];
-        $data_abertura = $linha["data_abertura"];
+
+    <div id="listagem">
+      <?php
+        require("../conecta.inc.php");
+        $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+        $resultado=mysqli_query($ok, "Select * from cursos") or die ("Não é possível consultar a lista de cursos"); 
+        print("<table>");
         print("<tr>");
-        print("<td>$codigo</td>");
-        print("<td>$nome_curso</td>");
-        print("<td>$data_abertura</td>");
-        echo("<td><a href='./curso_a_deletar.php?codigo=$codigo'>Deletar</a></td>");
-        print("</tr>"); };
-        print("</table></center>");
-  ?> 
+        print("<th><b>Codigo do curso</th>");
+        print("<th><b>Nome do curso</th>");
+        print("<th><b>Data da abertura</th>");
+        print("<th><b>Deletar</th>");
+        print("</tr>");
+      
+        while ($linha=mysqli_fetch_array($resultado)){
+            $codigo        = $linha["codigo"];
+            $nome_curso    = $linha["nome_curso"];
+            $data_abertura = $linha["data_abertura"];
+            print("<tr>");
+            print("<td><b>$codigo</b></td>");
+            print("<td>$nome_curso</td>");
+            print("<td>$data_abertura</td>");
+            echo("<td><a href='./curso_a_deletar.php?codigo=$codigo'>Deletar</a></td>");
+            print("</tr>"); };
+            print("</table>");
+      ?> 
+    </div>
   </body>
 </html>
