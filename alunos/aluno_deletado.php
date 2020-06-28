@@ -27,6 +27,18 @@
     </a>
   </section>
 
+  <section id="backNav">
+      <a href="lista_alunos.php">
+        <div id="backButton">
+          <img src="../images/back.png" id="backIcon">
+        </div>
+
+        <div id="backText">
+        Voltar para listagem de Alunos
+        </div>
+      </a>
+    </section>
+
   <?php
     $cod_del = $_POST['cod_del'];
     $nome = $_POST['nome'];

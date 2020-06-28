@@ -28,34 +28,35 @@
       </a>
     </section>
 
-  <?php
-    require("../conecta.inc.php");
-    $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-    $resultado1=mysqli_query($ok, "Select * from alunos,cursos,cidades where cidades.cod_cidade=alunos.cidade and cursos.codigo=alunos.curso") or die ("Não é possível consultar a lista de alunos"); 
-  print("<center><h2>LISTA DE ALUNOS</h2>");
-  print("<table border='1' bordercolor='black'>");
-  print("<tr><td><b>MATRÍCULA</td>");
-  print("<td><b>Nome</td>");
-  print("<td><b>Endereço</td>");
-  print("<td><b>Cidade</td>");
-  print("<td><b>Curso</td>");
-  print("<td><b>Deletar</td><td><b>Alterar</td></tr>");
+    <div id="listagem">
+      <?php
+        require("../conecta.inc.php");
+        $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+        $resultado1=mysqli_query($ok, "Select * from alunos,cursos,cidades where cidades.cod_cidade=alunos.cidade and cursos.codigo=alunos.curso") or die ("Não é possível consultar a lista de alunos");
+      print("<table>");
+      print("<tr><th><b>Matrícula</th>");
+      print("<th><b>Nome</th>");
+      print("<th><b>Endereço</th>");
+      print("<th><b>Cidade</th>");
+      print("<th><b>Curso</th>");
+      print("<th><b>Deletar</th><th><b>Alterar</th></tr>");
 
-  while ($linha=mysqli_fetch_array($resultado1))  
-  {
-    $Matricula  =$linha["matricula"];
-    $Nome_aluno =$linha["nome_aluno"];
-    $Endereco   =$linha["endereco"];
-    $Cidade     =$linha["nome_cid"];
-    $Curso      =$linha["nome_curso"];
-    print("<tr><td align='center'>$Matricula</td>");
-    print("<td>$Nome_aluno</td>");
-    print("<td>$Endereco</td>");
-    print("<td>$Cidade</td>");
-    print("<td>$Curso</td>");
-    echo("<td><a href='aluno_a_deletar.php?cod=$Matricula'>Deletar</a></td>");
-    echo("<td><a href='altera_alunos.php?cod=$Matricula'>Alterar</a></td></tr>");  }
-    print("</table></center>");
-  ?> 
+      while ($linha=mysqli_fetch_array($resultado1))  
+      {
+        $Matricula  =$linha["matricula"];
+        $Nome_aluno =$linha["nome_aluno"];
+        $Endereco   =$linha["endereco"];
+        $Cidade     =$linha["nome_cid"];
+        $Curso      =$linha["nome_curso"];
+        print("<tr><td><b>$Matricula</b></td>");
+        print("<td>$Nome_aluno</td>");
+        print("<td>$Endereco</td>");
+        print("<td>$Cidade</td>");
+        print("<td>$Curso</td>");
+        echo("<td><a href='aluno_a_deletar.php?cod=$Matricula'>Deletar</a></td>");
+        echo("<td><a href='altera_alunos.php?cod=$Matricula'>Alterar</a></td></tr>");  }
+        print("</table></center>");
+      ?>
+    </div>
   </body>
 </html>
