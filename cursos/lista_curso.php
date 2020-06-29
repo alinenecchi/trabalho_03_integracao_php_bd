@@ -32,7 +32,7 @@
       <?php
         require("../conecta.inc.php");
         $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-        $resultado=mysqli_query($ok, "Select * from cursos") or die ("Não é possível consultar a lista de cursos"); 
+        $resultado=mysqli_query($ok, "Select * from cursos order by nome_curso") or die ("Não é possível consultar a lista de cursos"); 
         print("<table>");
         print("<tr>");
         print("<th><b>Codigo do curso</th>");

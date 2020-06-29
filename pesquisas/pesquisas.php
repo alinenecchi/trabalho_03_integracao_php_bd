@@ -44,7 +44,7 @@
 		<form action="resultados.php" method="get" id="form3">
 			<label id="alunoCidadeLabel">Alunos por Cidades: </label>
 			<select name="cidades" id="cidade">
-			<option value="" disabled selected>escolha...</option>
+			<option value="" selected>escolha...</option>
 			<?php
 			require("../conecta.inc.php");
 			$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
