@@ -31,14 +31,14 @@
 			<label id="cidadeLabel">Cidade: </label>
 			<input type="text" name="cidade" id="cidadeInput">
 			<input type="hidden" name="id" value="1">
-			<input type="submit" value="Pesquisar">
+			<input type="submit" value="Pesquisar" class="pesquisarButton">
 		</form>
 
 		<form action="resultados.php" method="get" id="form2">
 			<label id="estadoLabel">Estado: </label>
 			<input type="text" name="estado" id="estadoInput">
 			<input type="hidden" name="id" value="2">
-			<input type="submit" value="Pesquisar">
+			<input type="submit" value="Pesquisar"  class="pesquisarButton">
 		</form>
 
 		<form action="resultados.php" method="get" id="form3">
@@ -59,7 +59,7 @@
 			</select>
 
 			<input type="hidden" name="id" value="3">
-			&nbsp;&nbsp;<input type="submit" value="Pesquisar">
+			<input type="submit" value="Pesquisar" class="pesquisarButton">
 		</form>
 
 		<form action="resultados.php" method="get" id="form4">
@@ -79,7 +79,7 @@
 			</select>
 
 			<input type="hidden" name="id" value="4">
-			&nbsp;&nbsp;<input type="submit" value="Pesquisar">
+			<input type="submit" value="Pesquisar" class="pesquisarButton">
 		</form>
 	</body>
 </html>

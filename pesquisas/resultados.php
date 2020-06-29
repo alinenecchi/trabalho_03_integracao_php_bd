@@ -26,8 +26,21 @@
           Voltar para home
         </div>
       </a>
+	</section>
+	
+	<section id="backNav">
+		<a href="pesquisas.php">
+			<div id="backButton">
+			<img src="../images/back.png" id="backIcon">
+			</div>
+
+			<div id="backText">
+				Voltar para Pesquisas
+			</div>
+		</a>
     </section>
 
+	<div id="resultado">
 <?php
 $id=$_GET["id"];
 require("../conecta.inc.php");
@@ -80,7 +93,7 @@ elseif ($id==3)
 		$select_cidade = mysqli_query($ok, "select nome_cid from cidades where '$cidades' = cod_cidade") or die ("Não é possível pesquisar as informações dessa cidade.");
 		while ($row=mysqli_fetch_array($select_cidade)){
 			$cid_escolhida=$row["nome_cid"];
-			print("Alunos de $cid_escolhida:<br>");
+			print("<b>Alunos de $cid_escolhida:</b><br>");
 		}
 		
 		$resultado=mysqli_query($ok, "Select nome_aluno, endereco from alunos, cidades where alunos.cidade=cidades.cod_cidade and cidades.cod_cidade = '$cidades'") 
@@ -92,8 +105,8 @@ elseif ($id==3)
 			{
 				$Nome_aluno=$linha["nome_aluno"];
 				$Endereco=$linha["endereco"];
-				print("<br>Nome: $Nome_aluno
-				<br> Endereço: $Endereco <br>");
+				print("<br><b>Nome: </b>$Nome_aluno
+				<br><b>Endereço: </b>$Endereco <br>");
 			}
 	}
 }
@@ -107,7 +120,7 @@ elseif ($id==4)
 		$select_curso = mysqli_query($ok, "select nome_curso from cursos where '$cursos' = codigo") or die ("Não é possível pesquisar as informações desse curso.");
 		while ($row=mysqli_fetch_array($select_curso)){
 			$c_escolhido=$row["nome_curso"];
-			print("Alunos de $c_escolhido:<br>");
+			print("<b>Alunos de $c_escolhido:</b><br>");
 		}
 		$resultado=mysqli_query($ok, "Select nome_aluno, endereco, nome_cid from alunos, cursos, cidades where alunos.cidade=cidades.cod_cidade and alunos.curso=cursos.codigo and cursos.codigo='$cursos'") 
 		or die ("Não é possível pesquisar departamento do funcionário.");
@@ -120,9 +133,9 @@ elseif ($id==4)
 			$Endereco=$linha["endereco"];
 			$Cidade=$linha["nome_cid"];
 			print("
-			<br>Nome: $Nome_aluno
-			<br> Endereço: $Endereco 
-			<br> Cidade: $Cidade <br>");
+			<br><b>Nome: </b>$Nome_aluno
+			<br><b>Endereço: </b>$Endereco 
+			<br><b>Cidade: </b>$Cidade <br>");
 		}
 	}
 }
@@ -130,5 +143,6 @@ else
 	print("Informe um critério...");
 
 ?>
+		</div>
     </body>
 </html>
