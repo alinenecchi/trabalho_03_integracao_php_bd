@@ -10,23 +10,12 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Banco de dados: `escola`
 --
-
--- --------------------------------------------------------
-
---
+- --------------------------------------------------------
 -- Estrutura da tabela `alunos`
 --
-
 CREATE TABLE `alunos` (
   `matricula` int(10) NOT NULL,
   `nome_aluno` varchar(100) NOT NULL,
@@ -35,32 +24,29 @@ CREATE TABLE `alunos` (
   `curso` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
 -- Extraindo dados da tabela `alunos`
---
-
-INSERT INTO `alunos` (`matricula`, `nome_aluno`, `endereco`, `cidade`, `curso`) VALUES
-(29, 'VICTORIA CHAVES CARDOSO', 'AVENIDA DA AZENHA', 4, 3),
-(30, 'ALINE RODRIGUES DA CRUZ', 'AVENIDA DA AZENHA', 16, 2),
-(31, 'DENISE CRUZ', 'ALIPIO MARQUES VERCHAI', 25, 5),
-(32, 'ANDRESSA CRUZ', 'MUNDAO', 12, 3);
+INSERT INTO `alunos` (`nome_aluno`, `endereco`, `cidade`, `curso`) VALUES
+('VICTORIA CHAVES CARDOSO', 'AVENIDA DA AZENHA', 4, 3),
+('ALINE RODRIGUES DA CRUZ', 'AVENIDA DA AZENHA', 16, 2),
+('DENISE CRUZ', 'ALIPIO MARQUES VERCHAI', 25, 5),
+('ALANDA LEOTE', 'AV IPIRANGA', 4, 9),
+('BERNARDO ARAUJO', 'AV IPIRANGA', 4, 1),
+('BRUNA ROSSONI', 'CRISTOVÃO COLOMBO', 4, 1),
+('ALINE DIAS', 'BORGES DE MEDEIROS', 4, 1),
+('JOÃO PEDRO FONTES', 'MOSTARDEIRO', 2, 6),
+('JULIA FONTES', 'MOSTARDEIRO', 7, 4),
+('CAMILA LADWIG', 'EDUARDO PRADO', 20, 6);
 
 -- --------------------------------------------------------
-
---
 -- Estrutura da tabela `cidades`
 --
-
 CREATE TABLE `cidades` (
   `cod_cidade` int(10) NOT NULL,
   `nome_cid` varchar(40) NOT NULL,
   `estado` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
 -- Extraindo dados da tabela `cidades`
---
-
 INSERT INTO `cidades` (`cod_cidade`, `nome_cid`, `estado`) VALUES
 (3, 'Canoas', 2),
 (4, 'Porto Alegre', 2),
@@ -89,21 +75,15 @@ INSERT INTO `cidades` (`cod_cidade`, `nome_cid`, `estado`) VALUES
 (27, 'Curitiba', 1);
 
 -- --------------------------------------------------------
-
---
 -- Estrutura da tabela `cursos`
 --
-
 CREATE TABLE `cursos` (
   `codigo` int(10) NOT NULL,
   `nome_curso` varchar(40) NOT NULL,
   `data_abertura` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
 -- Extraindo dados da tabela `cursos`
---
-
 INSERT INTO `cursos` (`codigo`, `nome_curso`, `data_abertura`) VALUES
 (1, 'ADS', '0000-00-00'),
 (2, 'SPI', '0000-00-00'),
@@ -115,24 +95,17 @@ INSERT INTO `cursos` (`codigo`, `nome_curso`, `data_abertura`) VALUES
 (8, 'FILOSOFIA', '2020-06-24'),
 (9, 'QUÍMICA', '2020-06-24'),
 (10, 'ENGENHARIA DA COMPUTAÇÃO', '2020-06-24'),
-(11, 'ADMINISTRAÇÃO', '2020-06-24'),
-(12, 'TESTE', '0000-00-00');
+(11, 'ADMINISTRAÇÃO', '2020-06-24');
 
 -- --------------------------------------------------------
-
---
 -- Estrutura da tabela `estados`
 --
-
 CREATE TABLE `estados` (
   `cod_estado` int(10) NOT NULL,
   `nome_est` char(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
 -- Extraindo dados da tabela `estados`
---
-
 INSERT INTO `estados` (`cod_estado`, `nome_est`) VALUES
 (1, 'PARANÁ'),
 (2, 'RIO GRANDE DO SUL'),
